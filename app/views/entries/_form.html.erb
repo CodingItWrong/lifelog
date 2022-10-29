@@ -11,10 +11,12 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :log_time, style: "display: block" %>
-    <%= form.datetime_field :log_time %>
-  </div>
+  <% if entry.id.present? %>
+    <div>
+      <%= form.label :log_time, style: "display: block" %>
+      <%= form.datetime_field :log_time %>
+    </div>
+  <% end %>
 
   <div>
     <%= form.label :latitude, style: "display: block" %>
