@@ -4,10 +4,15 @@
 
 <div id="entries">
   <% @entries.each do |entry| %>
-    <%= render entry %>
-    <p>
-      <%= link_to "Show this entry", entry %>
-    </p>
+    <div id="<%= dom_id entry %>">
+      <%= link_to entry.log_time, entry %>
+      -
+      <% if entry.location_name.present? %>
+        <%= entry.location_name %>
+      <% else %>
+        <%= entry.lat_lng %>
+      <% end %>
+    </div>
   <% end %>
 </div>
 

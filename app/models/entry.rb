@@ -5,4 +5,8 @@ class Entry < ApplicationRecord
   def set_log_time
     self.log_time = Time.now
   end
+
+  def lat_lng
+    "(#{latitude}, #{longitude})"
+  end
 end
