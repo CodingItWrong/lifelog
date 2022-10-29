@@ -52,3 +52,7 @@ group :test do
   gem "rspec_junit_formatter"
   gem "selenium-webdriver"
 end
+
+group :production do
+  gem "rack-attack"
+end
