@@ -26,7 +26,7 @@
   <div>
     <%= form.label :longitude, style: "display: block" %>
     <%= form.text_field :longitude %>
-    <button type="button" onclick="console.log('TODO: set location')">
+    <button type="button" onclick="populateLocation()">
       Use Current Location
     </button>
   </div>
@@ -45,3 +45,12 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<script language="javascript">
+  function populateLocation() {
+    navigator.geolocation.getCurrentPosition(({coords: {latitude, longitude}}) => {
+      document.getElementById('entry_latitude').value = latitude;
+      document.getElementById('entry_longitude').value = longitude;
+    })
+  }
+</script>
