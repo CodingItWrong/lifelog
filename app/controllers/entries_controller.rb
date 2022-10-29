@@ -4,7 +4,7 @@ class EntriesController < ApplicationController
 
   # GET /entries
   def index
-    @entries = Entry.all
+    @entries = Entry.all.order(log_time: :desc)
   end
 
   # GET /entries/1
