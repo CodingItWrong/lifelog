@@ -1,6 +1,6 @@
 # Lifelog
 
-This is a short description of your app.
+A minimal attempt at tracking visits to places in a privately-owned app.
 
 ## Getting Started
 
