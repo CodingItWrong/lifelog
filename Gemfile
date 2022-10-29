@@ -32,3 +32,16 @@ group :development do
 
 end
 
+
+group :development do
+  gem "bullet"
+  gem "dotenv-rails"
+end
+
+group :development, :test do
+  gem "pry-rails"
+  gem "pry-byebug"
+  gem "rspec-rails"
+  gem "coderay"
+  gem "rubocop"
+end
