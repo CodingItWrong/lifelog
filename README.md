@@ -28,3 +28,7 @@ $ bin/rails server
 ```
 
 [postgres-app]: http://postgresapp.com
+
+## License
+
+MIT
