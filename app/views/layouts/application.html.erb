@@ -11,6 +11,12 @@
 
   <body>
     <h1>Lifelog</h1>
+    <% if user_signed_in? %>
+      <%= form_for(current_user,
+          url: destroy_user_session_path, html: { method: :delete }) do |f| %>
+          <%= f.submit "Log out" %>
+      <% end %>
+    <% end %>
 
     <p class="notice" style="color: green"><%= notice %></p>
     <p class="alert"><%= alert %></p>
