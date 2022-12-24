@@ -5,7 +5,7 @@ class EntriesController < ApplicationController
 
   # GET /entries
   def index
-    @entries = Entry.all.order(log_time: :desc)
+    @entries = current_user.entries.order(log_time: :desc)
   end
 
   # GET /entries/1
@@ -14,7 +14,7 @@ class EntriesController < ApplicationController
 
   # GET /entries/new
   def new
-    @entry = Entry.new
+    @entry = current_user.entries.new
   end
 
   # GET /entries/1/edit
@@ -23,7 +23,7 @@ class EntriesController < ApplicationController
 
   # POST /entries
   def create
-    @entry = Entry.new(entry_params)
+    @entry = current_user.entries.new(entry_params)
 
     if @entry.save
       redirect_to entries_url, notice: 'Entry was successfully created.'
@@ -51,7 +51,7 @@ class EntriesController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_entry
-    @entry = Entry.find(params[:id])
+    @entry = current_user.entries.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
