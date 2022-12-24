@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 class Entry < ApplicationRecord
+  belongs_to :user
+
   after_initialize :set_log_time
 
   def set_log_time
